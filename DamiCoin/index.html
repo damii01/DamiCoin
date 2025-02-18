@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DamiCoin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.1/web3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1 id="token-name" style="font-size: xxx-large;"></h1>
+    <div class="background">
+        
+    
+    <div class="container">
+        <h3 for="account">Novčanik za slanje</h3>
+        <select id="account" onchange="updateBalance()"></select>
+        <h2 id="balance"></h2>
+
+       <hr>
+
+       <h4 for="amount">Količina</h4>
+        <div class="amout-container">
+            <div class="button-container">
+                <button class="plus-minus minus" onclick="changeAmount(-1)">−</button>
+            </div>
+            <input type="number" id="amount" value="1" min="1">
+            
+            <button class="plus-minus" onclick="changeAmount(1)">+</button>
+        </div>
+        <button onclick="sendTokens()">Potpišite</button>
+        
+    </div>
+
+    <img width="20%" height="20%" style="align-self: center;" src="./background.png" alt="background image">
+
+    <div class="container">
+        <h2 for="toAddress">Odaberite primatelja</h2>
+        <select id="toAddress"></select>
+        <h2 id="balance-receiver"></h2>
+        <img width="40%" height="40%" style="padding-top: 1.5rem; padding-bottom: 1.5rem;" src="icon-cryptocurrency-icx.png" alt="crypto img">
+    </div>
+
+</div>
+<div class="container" style="margin-bottom: 3rem;">
+    <h2 for="amount">Sveukupna količina</h2>
+    <h2 id="total-balance">0</h2>
+
+    <hr>
+
+    <h4 for="amount">Količina</h4>
+    <div class="amout-container">
+        <div class="button-container">
+            <button class="plus-minus minus" onclick="changeAmountBM(-1)">−</button>
+        </div>
+        <input type="number" id="amount-burn-mint" value="1" min="1" >
+        <div class="button-container">
+            <button class="plus-minus" onclick="changeAmountBM(1)">+</button>
+        </div>
+    </div>
+    <button onclick="mintTokens()">Mint</button>
+    <button onclick="burnTokens()">Burn</button>
+    
+</div>
+</body>
+</html>
+
+
+
